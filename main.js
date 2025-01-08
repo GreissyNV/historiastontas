@@ -16,13 +16,38 @@ const inserty = ["the soup kitchen", "Disneyland", "the White House"];
 const insertz = [ "spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
 
 
-
-
-
 //3. DEFINICIÓN DE FUNCIÓN PARCIAL Y ESCUCHADOR DE EVENTOS
-btnRandomize.addEventListener("click", function() {
-    XPathResult();
-})
+randomize.addEventListener("click", result);
+
+function result() {
+    let newStory = storyText;
+  
+    const xItem = randomValueFromArray(insertX);
+    const yItem = randomValueFromArray(insertY);
+    const zItem = randomValueFromArray(insertZ);
+  
+    newStory = newStory.replaceAll(":insertx:",xItem);
+    newStory = newStory.replaceAll(":inserty:",yItem);
+    newStory = newStory.replaceAll(":insertz:",zItem);
+  
+    if (customName.value !== "") {
+      const name = customName.value;
+      newStory = newStory.replaceAll("Bob", name);
+    }
+  
+    if (document.getElementById("uk").checked) {
+      const weight = `${Math.round(300*0.0714286)} stone`;
+      const temperature =  `${Math.round((94-32) * 5 / 9)} centigrade`;
+      newStory = newStory.replaceAll("94 fahrenheit", temperature);
+      newStory = newStory.replaceAll("300 pounds", weight);
+    }
+  
+    story.textContent = newStory;
+    story.style.visibility = "visible";
+  }
+  
+
+
 
 
 

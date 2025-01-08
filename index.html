@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historias Tontas</title>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif;
+        text-align: initial;
+        background-color: pink;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        height: 100vh;
+        margin: 0;
+      }
+
+      button {
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: palevioletred;
+      }
+
+      button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="customname">Enter custom name:</label>
+      <input id="customname" type="text" placeholder />
+    </div>
+    <div>
+      <label for="us">US</label>
+      <input id="us" type="radio" name="ukus" value="us" checked />
+      <label for="uk">UK</label>
+      <input id="uk" type="radio" name="ukus" value="uk" />
+    </div>
+    <div>
+      <button class="randomize">Generate random story</button>
+    </div>
+    <p class="story"></p>
+
+    <script src="main.js"></script>
+  </body>
+</html>
